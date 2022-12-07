@@ -1,7 +1,6 @@
 package dat3.backend.api;
 
 import dat3.backend.dto.ClubDTO;
-import dat3.backend.dto.MatchDTO;
 import dat3.backend.service.ClubService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +31,6 @@ public class ClubController {
 
     @GetMapping("/{clubName}")
     public ClubDTO getClubByName(@PathVariable String clubName){
-        ClubDTO clubDTO = clubService.getClubByName(clubName);
         return clubService.getClubByName(clubName);
     }
 

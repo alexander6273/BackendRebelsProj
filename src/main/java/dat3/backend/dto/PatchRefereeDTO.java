@@ -14,8 +14,7 @@ public class PatchRefereeDTO
     private String username;
     private int signupId;
 
-    public PatchRefereeDTO(int matchId, String username, int signupId)
-    {
+    public PatchRefereeDTO(int matchId, String username, int signupId) {
         this.matchId = matchId;
         this.username = username;
         this.signupId = signupId;

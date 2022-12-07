@@ -51,11 +51,11 @@ public class SetupDevUsers implements ApplicationRunner {
         System.out.println("******* REMOVE THIS BEFORE DEPLOYMENT, AND SETUP DEFAULT USERS DIRECTLY  *****");
         System.out.println("**** ** ON YOUR REMOTE DATABASE                 ******************************");
         System.out.println("******************************************************************************");
-        Referee user1 = new Referee("user1",  passwordUsedByAll, "user1@a.dk", "firstname1", "lastname1");
-        Referee user2 = new Referee("user2",  passwordUsedByAll, "user2@a.dk", "firstname2", "lastname2");
-        Referee user3 = new Referee("user3",  passwordUsedByAll, "user3@a.dk", "firstname3", "lastname3");
-        Referee user4 = new Referee("user4",  passwordUsedByAll, "user4@a.dk", "firstname4", "lastname4");
-        Referee user5 = new Referee("user5",  passwordUsedByAll, "user5@a.dk", "firstname5", "lastname5");
+        Referee user1 = new Referee("KC",  passwordUsedByAll, "KCRebels@a.dk", "Frederik", "Kiær");
+        Referee user2 = new Referee("user2",  passwordUsedByAll, "user2@a.dk", "Mikkel", "Frederiksen");
+        Referee user3 = new Referee("user3",  passwordUsedByAll, "user3@a.dk", "Robert", "Mikkelsen");
+        Referee user4 = new Referee("user4",  passwordUsedByAll, "user4@a.dk", "Karsten", "Karstensen");
+        Referee user5 = new Referee("user5",  passwordUsedByAll, "user5@a.dk", "Christina", "Petersen");
 
 
         user1.setLicense("A");
@@ -79,11 +79,11 @@ public class SetupDevUsers implements ApplicationRunner {
         userWithRolesRepository.save(user4);
         userWithRolesRepository.save(user5);
 
-        Referee referee1 = new Referee("referee1", passwordUsedByAll, "ref1@a.dk","firstname10", "lastname10");
-        Referee referee2 = new Referee("referee2", passwordUsedByAll, "ref2@a.dk","firstname2", "lastname10");
-        Referee referee3 = new Referee("referee3", passwordUsedByAll, "ref3@a.dk","firstname2", "lastname10");
-        Referee referee4 = new Referee("referee4", passwordUsedByAll, "ref4@a.dk","firstname2", "lastname10");
-        Referee referee5 = new Referee("referee5", passwordUsedByAll, "ref5@a.dk","firstname2", "lastname10");
+        Referee referee1 = new Referee("Lars", passwordUsedByAll, "Lars@a.dk","Lars", "Olsen");
+        Referee referee2 = new Referee("Hans", passwordUsedByAll, "Hans@a.dk","Hans", "Hansen");
+        Referee referee3 = new Referee("Bo", passwordUsedByAll, "BoLarsen@a.dk","Bo", "Larsen");
+        Referee referee4 = new Referee("Allan", passwordUsedByAll, "AllanJeppesen@a.dk","Allan", "Jeppesen");
+        Referee referee5 = new Referee("Per", passwordUsedByAll, "Per@a.dk","Per", "Olsen");
 
         referee1.addRole(Role.REFEREE);
         referee2.addRole(Role.REFEREE);
@@ -107,31 +107,31 @@ public class SetupDevUsers implements ApplicationRunner {
         userWithRolesRepository.save(referee5);
 
 
-        Division division1 = new Division("U13",90,100, "LOL");
-        Division division2 = new Division("U15",90,100, "LOL");
-        Division division3 = new Division("U17",90,100, "LOL");
-        Division division4 = new Division("U19",90,100, "LOL");
+        Division division1 = new Division("U13",90,100, "D",2);
+        Division division2 = new Division("U15",90,100, "C",3);
+        Division division3 = new Division("U17",90,100, "B",4);
+        Division division4 = new Division("U19",90,100, "A",5);
 
         divisionRepository.save(division1);
         divisionRepository.save(division2);
         divisionRepository.save(division3);
         divisionRepository.save(division4);
 
-        Team team1 = new Team("Herlev Rebels", division1);
-        Team team2 = new Team("Copenhagen Towers", division1);
-        Team team3 = new Team("Søllerød Golddiggers", division1);
+        Team team1 = new Team("U13", division1);
+        Team team2 = new Team("U13", division1);
+        Team team3 = new Team("U13", division1);
 
-        Team team4 = new Team("Herlev Rebels", division2);
-        Team team5 = new Team("Copenhagen Towers", division2);
-        Team team6 = new Team("Søllerød Golddiggers", division2);
+        Team team4 = new Team("U15", division2);
+        Team team5 = new Team("U15", division2);
+        Team team6 = new Team("U15", division2);
 
-        Team team7 = new Team("Herlev Rebels", division3);
-        Team team8 = new Team("Copenhagen Towers", division3);
-        Team team9 = new Team("Søllerød Golddiggers", division3);
+        Team team7 = new Team("U17", division3);
+        Team team8 = new Team("U17", division3);
+        Team team9 = new Team("U17", division3);
 
-        Team team10 = new Team("Herlev Rebels", division4);
-        Team team11 = new Team("Copenhagen Towers", division4);
-        Team team12 = new Team("Søllerød Golddiggers", division4);
+        Team team10 = new Team("U19", division4);
+        Team team11 = new Team("U19", division4);
+        Team team12 = new Team("U19", division4);
 
         teamRepository.save(team1);
         teamRepository.save(team2);
@@ -146,20 +146,28 @@ public class SetupDevUsers implements ApplicationRunner {
         teamRepository.save(team11);
         teamRepository.save(team12);
 
-        LocalDateTime ldt1 = LocalDateTime.of(2022, 10, 10, 18, 15);
+        LocalDateTime ldt1 = LocalDateTime.of(2022, 10, 10, 12, 30);
+        LocalDateTime ldt2 = LocalDateTime.of(2023, 5, 10, 13, 15);
+        LocalDateTime ldt3 = LocalDateTime.of(2023, 3, 9, 11, 45);
+        LocalDateTime ldt4 = LocalDateTime.of(2023, 2, 22, 10, 30);
+        LocalDateTime ldt5 = LocalDateTime.of(2023, 2, 21, 12, 15);
+        LocalDateTime ldt6 = LocalDateTime.of(2023, 1, 10, 13, 15);
+        LocalDateTime ldt7 = LocalDateTime.of(2023, 3, 11, 14, 0);
+        LocalDateTime ldt8 = LocalDateTime.of(2023, 3, 24, 11, 15);
+        LocalDateTime ldt9 = LocalDateTime.of(2023, 4, 4, 12, 0);
+        LocalDateTime ldt10 = LocalDateTime.of(2023, 2, 9, 12, 0);
+
         Match match1 = new Match(team1, team3, team2, ldt1, division1);
-        Match match2 = new Match(team1, team2, team3, ldt1, division1);
-        Match match3 = new Match(team2, team1, team3, ldt1, division1);
-        Match match4 = new Match(team2, team3, team1, ldt1, division1);
+        Match match2 = new Match(team1, team2, team3, ldt2, division1);
+        Match match3 = new Match(team2, team1, team3, ldt3, division1);
+        Match match4 = new Match(team2, team3, team1, ldt4, division1);
+        Match match5 = new Match(team4, team5, team6, ldt5, division2);
+        Match match6 = new Match(team7, team8, team9, ldt6, division3);
+        Match match7 = new Match(team8, team7, team9, ldt7, division3);
+        Match match8 = new Match(team9, team7, team8, ldt8, division3);
+        Match match9 = new Match(team10, team11, team12, ldt9, division4);
+        Match match10 = new Match(team11, team12, team10, ldt10, division4);
 
-        Match match5 = new Match(team4, team5, team6, ldt1, division2);
-
-        Match match6 = new Match(team7, team8, team9, ldt1, division3);
-        Match match7 = new Match(team8, team7, team9, ldt1, division3);
-        Match match8 = new Match(team9, team7, team8, ldt1, division3);
-
-        Match match9 = new Match(team10, team11, team12, ldt1, division4);
-        Match match10 = new Match(team11, team12, team10, ldt1, division4);
         matchRepository.save(match1);
         matchRepository.save(match2);
         matchRepository.save(match3);
@@ -171,10 +179,10 @@ public class SetupDevUsers implements ApplicationRunner {
         matchRepository.save(match9);
         matchRepository.save(match10);
 
-        SignUp signUp1 = new SignUp(match2, referee2, "ref");
-        SignUp signUp2 = new SignUp(match2, referee1, "ref");
-        SignUp signUp4 = new SignUp(match4, referee1, "ref");
-        SignUp signUp5 = new SignUp(match4, referee2, "ref");
+        SignUp signUp1 = new SignUp(match2, referee2, "Head Judge");
+        SignUp signUp2 = new SignUp(match2, referee1, "Back Judge");
+        SignUp signUp4 = new SignUp(match4, referee1, "Line Judge");
+        SignUp signUp5 = new SignUp(match4, referee2, "Field Judge");
         signUpRepository.save(signUp1);
         signUpRepository.save(signUp2);
         signUpRepository.save(signUp4);
@@ -189,12 +197,19 @@ public class SetupDevUsers implements ApplicationRunner {
         matchRepository.save(match20);
         match20.setAcceptedReferees(acceptedReferees);
         match1.setAcceptedReferees(acceptedReferees);
+
+        referee1.addAcceptedMatch(match1);
+        referee2.addAcceptedMatch(match1);
+
+        referee1.addAcceptedMatch(match20);
+        referee2.addAcceptedMatch(match20);
+
         matchRepository.save(match20);
         matchRepository.save(match1);
 
-        Club club1 = new Club("Herlev Rebels", "Club1Sted", "club@club1.com");
-        Club club2 = new Club("Copenhagen Towers", "Club2Sted", "club@club2.com");
-        Club club3 = new Club("Søllerød Golddiggers", "Club3Sted", "club@club3.com");
+        Club club1 = new Club("Herlev Rebels", "Dilhaven 40, 2730 Herlev", "Herlev@Rebels.com", "rebels");
+        Club club2 = new Club("Copenhagen Towers", "Ved Stadion 6, 2820 Gentofte", "Copenhagen@Towers.com", "towers");
+        Club club3 = new Club("Søllerød Golddiggers", "Egebækvej 118, 2850 Nærum", "Søllerød@GoldDiggers.com", "golddiggers");
         Club club4 = new Club("Club4", "Club4Sted", "club@club4.com");
         Club club5 = new Club("Club5", "Club5Sted", "club@club5.com");
 
@@ -250,10 +265,6 @@ public class SetupDevUsers implements ApplicationRunner {
         club5.addReferee(user5);
         club5.addReferee(referee5);
 
-
-
-
-
         clubRepository.save(club1);
         clubRepository.save(club2);
         clubRepository.save(club3);
@@ -285,7 +296,7 @@ public class SetupDevUsers implements ApplicationRunner {
         userWithRolesRepository.save(referee5);
 
         // DOMMERANSVARLIG
-        Referee refManagerHerlev = new Referee("herlev", passwordUsedByAll, "refman1@a.dk","firstname2", "lastname10");
+        Referee refManagerHerlev = new Referee("herlev", passwordUsedByAll, "refman1@a.dk","Kristian", "Hadberg");
         refManagerHerlev.addRole(Role.REFEREE);
         refManagerHerlev.addRole(Role.REFEREEMANAGER);
         refManagerHerlev.setLicense("A");
@@ -294,7 +305,7 @@ public class SetupDevUsers implements ApplicationRunner {
         club1.addReferee(refManagerHerlev);
         clubRepository.save(club1);
 
-        Referee refManagerCopenhagen = new Referee("copenhagen", passwordUsedByAll, "refman2@a.dk","firstname2", "lastname10");
+        Referee refManagerCopenhagen = new Referee("copenhagen", passwordUsedByAll, "refman2@a.dk","Alexander", "Larsen");
         refManagerCopenhagen.addRole(Role.REFEREE);
         refManagerCopenhagen.addRole(Role.REFEREEMANAGER);
         refManagerCopenhagen.setLicense("A");

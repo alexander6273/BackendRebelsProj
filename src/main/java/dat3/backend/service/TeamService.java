@@ -11,23 +11,18 @@ import org.w3c.dom.stylesheets.LinkStyle;
 import java.util.List;
 
 @Service
-public class TeamService
-{
+public class TeamService {
     TeamRepository teamRepository;
-
-    public TeamService(TeamRepository teamRepository)
-    {
+    public TeamService(TeamRepository teamRepository) {
         this.teamRepository = teamRepository;
     }
-
     public List<TeamDTO> getAllTeams(){
         return teamRepository.findAll()
                 .stream()
                 .map(t -> new TeamDTO(t, true))
                 .toList();
     }
-
-    public TeamDTO getTeamById(int id){
+    public TeamDTO getTeamById(int id) {
         Team team = teamRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Team not found"));
         return new TeamDTO(team);
     }

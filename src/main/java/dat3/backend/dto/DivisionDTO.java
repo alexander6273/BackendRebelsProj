@@ -5,13 +5,11 @@ import dat3.backend.entity.Division;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DivisionDTO {
-
         String name;
         int matchTime;
         int commission;

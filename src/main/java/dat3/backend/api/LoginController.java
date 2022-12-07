@@ -3,9 +3,6 @@ package dat3.backend.api;
 
 import dat3.backend.dto.UsernameDTO;
 import dat3.backend.service.UserService;
-import org.apache.catalina.User;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,14 +43,9 @@ public class LoginController {
     public boolean getUserInfo() {
         return true;
     }
-
-
     @GetMapping("/user-fromtoken")
     public UsernameDTO getUserInfo(Principal p) {
         String username = p.getName();
-        UsernameDTO usernameDTO = userService.getUserNameDTO(username);
-
-        return usernameDTO;
+        return userService.getUserNameDTO(username);
     }
-
 }

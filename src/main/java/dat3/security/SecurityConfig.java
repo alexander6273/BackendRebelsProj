@@ -107,27 +107,6 @@ public class SecurityConfig {
 
             //DET VI HAR LAVET
             .antMatchers("/", "/**").permitAll()
-            .antMatchers("/api/login").permitAll()
-
-            .antMatchers("/api/users").permitAll()
-            .antMatchers("/api/users/**").permitAll()
-            .antMatchers("/api/users/referees").permitAll()
-
-           // .antMatchers("/api/users/referees/*").permitAll()
-            .antMatchers().permitAll()
-
-            .antMatchers("/api/matches/*").permitAll()
-            .antMatchers("/api/matches").permitAll()
-            .antMatchers("/api/matches/division").permitAll()
-            .antMatchers("/api/matches/division/*").permitAll()
-            .antMatchers("/api/teams/*").permitAll()
-            .antMatchers("/api/teams").permitAll()
-            .antMatchers("/api/signups/**").permitAll()
-            .antMatchers("/api/signups").permitAll()
-            .antMatchers("/api/clubs").permitAll()
-            .antMatchers("/api/clubs/**").permitAll()
-            .antMatchers("/api/divisions").permitAll()
-            .antMatchers("/api/referees/**").permitAll()
 
     .anyRequest().authenticated());
 

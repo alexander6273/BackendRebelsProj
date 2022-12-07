@@ -16,8 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Table(name = "kamp")
-public class Match
-{
+public class Match {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
@@ -42,8 +41,7 @@ public class Match
     @ManyToOne
     Division division;
 
-    public Match(Team homeTeam, Team awayTeam, Team refereeTeam, LocalDateTime startTime, Division division)
-    {
+    public Match(Team homeTeam, Team awayTeam, Team refereeTeam, LocalDateTime startTime, Division division) {
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
         this.refereeTeam = refereeTeam;
@@ -51,7 +49,7 @@ public class Match
         this.division = division;
     }
 
-    public void addReferee(Referee referee){
+    public void addReferee(Referee referee) {
         acceptedReferees.add(referee);
     }
 }

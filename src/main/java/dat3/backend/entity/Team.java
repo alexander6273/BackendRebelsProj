@@ -11,21 +11,17 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Team
-{
+public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     @OneToMany
     List<Match> matches;
     String name;
-
     @ManyToOne
     Club club;
-
     @ManyToOne
     Division division;
-
     public Team(String name, Division division) {
         this.name = name;
         this.division = division;

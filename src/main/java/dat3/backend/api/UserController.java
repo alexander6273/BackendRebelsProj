@@ -28,7 +28,6 @@ public class UserController {
 
     @PostMapping("/referee")
     public UsernameDTO createReferee(@RequestBody RefereeDTO refereeDTO ){
-
         return  userService.addReferee(refereeDTO);
     }
 
@@ -63,11 +62,12 @@ public class UserController {
         userService.editRefereePassword(p.getName(), refereeDTO);
     }
 
-    //@PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PatchMapping("/makeAdmin/{username}")
     public void makeAdmin(@PathVariable String username){
         userService.makeAdmin(username);
     }
+
 
 
 }

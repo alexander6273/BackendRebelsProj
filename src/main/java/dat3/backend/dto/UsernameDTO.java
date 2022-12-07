@@ -10,7 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UsernameDTO {
-
     String username;
 
     public UsernameDTO(String username){
